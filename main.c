@@ -6,7 +6,7 @@
 int main() {
   int x, y, z;
   char userInput[2];
-  int uInput;
+  int uInput = 0;
   char *arrPointer;
   char *userChars;
   int arrLength;
@@ -18,15 +18,17 @@ int main() {
     char *name;
   };
 
-  printf("Enter the number of values you want:");
-  fgets(userInput, 5, stdin);
+  
+  while(uInput > 26 || uInput < 1) {
+    printf("Enter the # of values for your array, from 1 to 26:");
+    fgets(userInput, 5, stdin);
 
 // this doesnt work with fgets down below 
 //  scanf("%d", &uInput);
 
 
-  uInput = atoi(userInput);
-   
+    uInput = atoi(userInput);
+  }; 
   printf("user input was: %d\n", uInput);
 
   arrPointer = malloc(uInput);
