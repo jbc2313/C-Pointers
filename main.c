@@ -7,6 +7,7 @@ int main() {
   int x, y, z;
   int uInput;
   char *arrPointer;
+  char *userChars;
   int arrLength;
   char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -52,10 +53,16 @@ int main() {
 
 
 
+// Get the users name.
+
+  userChars = malloc(20);
+  printf("Enter your name:");
+  scanf("%s", userChars);
+
+  printf("Your name is: %s\n", userChars);
 
 
-
-
+  free(userChars);
 
   return 0;
 }
