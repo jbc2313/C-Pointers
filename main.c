@@ -12,6 +12,12 @@ int main() {
   int arrLength;
   char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+  struct user {
+    int input;
+    char *letterArr;
+    char *name;
+  };
+
   printf("Enter the number of values you want:");
   fgets(userInput, 5, stdin);
 
@@ -56,7 +62,6 @@ int main() {
   }
 
 
-  free(arrPointer);
 
 // Get the users name.
 
@@ -66,8 +71,24 @@ int main() {
   //This is another way, that accepts white space
   fgets(userChars, 20, stdin);
   printf("\nYour name is: %s\n", userChars);
+    
+  struct user A;
+
+  A.input = uInput;
+  A.letterArr = arrPointer;
+  A.name = userChars;
 
 
+  printf("The users name is: %s\n", A.name);
+  printf("The user chose: %d\n", A.input);
+  printf("The users chosen arr: \n");
+  for(x=0; x<A.input; x++) {
+    printf("arr[%d]: %c\n", x, A.letterArr[x]);
+  };
+  
+
+
+  free(arrPointer);
   free(userChars);
 
   return 0;
