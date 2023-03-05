@@ -5,6 +5,7 @@
 
 int main() {
   int x, y, z;
+  char userInput[2];
   int uInput;
   char *arrPointer;
   char *userChars;
@@ -12,8 +13,14 @@ int main() {
   char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
   printf("Enter the number of values you want:");
-  scanf("%d", &uInput);
+  fgets(userInput, 5, stdin);
 
+// this doesnt work with fgets down below 
+//  scanf("%d", &uInput);
+
+
+  uInput = atoi(userInput);
+   
   printf("user input was: %d\n", uInput);
 
   arrPointer = malloc(uInput);
@@ -51,15 +58,14 @@ int main() {
 
   free(arrPointer);
 
-
-
 // Get the users name.
 
   userChars = malloc(20);
   printf("Enter your name:");
-  scanf("%s", userChars);
-
-  printf("Your name is: %s\n", userChars);
+  //scanf("%s", userChars);
+  //This is another way, that accepts white space
+  fgets(userChars, 20, stdin);
+  printf("\nYour name is: %s\n", userChars);
 
 
   free(userChars);
