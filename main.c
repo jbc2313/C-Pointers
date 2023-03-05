@@ -10,7 +10,7 @@ int main() {
   int arrLength;
   char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  printf("Enter the number of values:");
+  printf("Enter the number of values you want:");
   scanf("%d", &uInput);
 
   printf("user input was: %d\n", uInput);
@@ -48,7 +48,7 @@ int main() {
   }
 
 
-
+  free(arrPointer);
 
 
 
