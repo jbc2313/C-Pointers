@@ -60,7 +60,7 @@ int main() {
   }
 
   for (z=0; z<uInput; z++) {
-    printf("arrPointer[%d]=%c\n", z, arrPointer[z]);
+    printf("arrPointer[%d]=%c | memAddr=%p\n", z, arrPointer[z], &arrPointer[z]);
   }
 
 
@@ -85,10 +85,12 @@ int main() {
   printf("The user chose: %d\n", A.input);
   printf("The users chosen arr: \n");
   for(x=0; x<A.input; x++) {
-    printf("arr[%d]: %c\n", x, A.letterArr[x]);
+    printf("arr[%d]: %c | memAddr: %p\n", x, A.letterArr[x], &A.letterArr[x]);
   };
   
 
+  printf("\nAddress of arrPointer = %p\n", &arrPointer);
+  printf("Address of User arr copied from arrPointer = %p\n\n", &A.letterArr);
 
   free(arrPointer);
   free(userChars);
